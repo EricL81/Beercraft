@@ -15,8 +15,9 @@ class CreateBreweriesTable extends Migration
     {
         Schema::create('breweries', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->float("grados");
+            $table->string('name');
+            $table->float('capacity');
+            $table->string('description');
             $table->timestamps();
         });
     }

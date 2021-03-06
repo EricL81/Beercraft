@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BreweryController;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,11 @@ use App\Http\Controllers\BreweryController;
 |
 */
 
-Route::get('/', function () {return view('welcome');})->name("home");
+Route::get('/',[FrontController::class,'index'])->name("home");
 
 Route::get('/cervecerias',[BreweryController::class,'todas'])->name("cervecerias");
+Route::post('/cervecerias',[BreweryController::class,'create'])->name("cervecerias.create");
+
 
 Route::get('/cerveceria',[BreweryController::class,'una'])->name("cerveceria");
 
