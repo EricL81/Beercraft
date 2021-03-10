@@ -2,20 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brewery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class BreweryController extends Controller
 {
-    public function todas(){
+    public function all()
+    {
+        // recuperar las cervecerias del db 
+        $breweries = Brewery::all();
+        // pasarlas a la vista
+        return view ('breweries',['breweries'=>$breweries]);
 
-        $breweries = DB::table('breweries')->get();
-        
-        return view("cervecerias", ["breweries"=>$breweries]);
+        }
+
+    public function one($id)
+    {
+        $brewery = Brewery::findOrFail($id);
+
+        return view ('brewery',['brewery'=>$brewery]);
     }
 
-    public function una(){
-        $cervezas = [
+    public function beer(){
+        $beer = [
             [
                 "nombre"=>"Heineken",
                 "origin"=>"Holanda",
@@ -46,15 +57,73 @@ class BreweryController extends Controller
             ],
         ];
 
-        return view("cerveceria", ["beers"=>$cervezas]);
+        return view("cerveza", ["beers"=>$beer]);
     }
 
 
-    public function create(Request $request){
 
-        DB::table('breweries')->insert($request->except('_token'));
+    public function create(Request $request)
+    {
+        $request = $request->validate([
+            'name' => 'filled',
+            'capacity' => 'required',
+            'description' => 'required'
+        ]);
+        
+        $user = Auth::user();
+        if (!$user)
+            return back()->with("message","No estás autenticado");
 
-        return redirect()->route('home');
+        $user->breweries()->create($request);
+
+        return redirect()->back()->with("message","Cerveceria creada con exito");
     }
+
+    public function update(Request $request,$id)
+    {
+        $request = $request->validate([
+            'name' => 'required',
+            'capacity' => 'required',
+            'description' => 'required'
+        ]);
+
+        // si estoy autenticado y si soy el dueno
+
+        $user = Auth::user();
+
+        if (!$user)
+            return back()->with("message","No estás autenticado");
+
+        $brewery = Brewery::findOrFail($id);
+
+        if($user->id != $brewery->user_id)
+            return back()->with("message","No estás autorizado");
+        
+        $brewery->name = $request['name'];
+        $brewery->capacity = $request['capacity'];
+        $brewery->description = $request['description'];
+
+        $brewery->save();
+
+        return back()->with("message","Cerveceria modificada con exito");
+    }
+
+    public function delete($id)
+    {
+        $user = Auth::user();
+
+        if (!$user)
+            return back();
+
+        $brewery = Brewery::findOrFail($id);
+
+        if($user->id != $brewery->user_id)
+            return back();
+
+        $brewery->delete();
+
+        return redirect()->route("cervecerias");
+    }
+
+
 }
-

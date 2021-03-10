@@ -15,13 +15,18 @@ use App\Http\Controllers\FrontController;
 |
 */
 
+// globales
 Route::get('/',[FrontController::class,'index'])->name("home");
 
-Route::get('/cervecerias',[BreweryController::class,'todas'])->name("cervecerias");
+// breweries
+Route::get('/cervecerias',[BreweryController::class,'all'])->name("cervecerias");
+Route::get('/cerveza',[BreweryController::class,'beer'])->name("cerveza");
+Route::get('/cervecerias/{id}',[BreweryController::class,'one'])->where("id","[0-9]+")->name("cerveceria");
 Route::post('/cervecerias',[BreweryController::class,'create'])->name("cervecerias.create");
+Route::put('/cervecerias/{id}',[BreweryController::class,'update'])->name("cervecerias.update");
+Route::delete('/cervecerias/{id}',[BreweryController::class,'delete'])->name("cervecerias.delete");
 
 
-Route::get('/cerveceria',[BreweryController::class,'una'])->name("cerveceria");
 
 
 

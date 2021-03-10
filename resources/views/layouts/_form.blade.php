@@ -1,32 +1,33 @@
-<div class="container" id="form">
-    <div class="row text-center justify-content-around">
-        <div class="col-12 col-md-6 col-lg-4">
-            <h2>Añade una nueva <span class="text-warning">Cerveceria</span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, consectetur. Ipsam in doloribus obcaecati quidem.</p>
+<section id="form" class="book-a-table">
+    <div class="container">
+        <div class="section-title">
+            <h2>Agregar una nueva <span>Cerveceria</span></h2>
+            <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
         </div>
-    </div>
 
-    <form action="/cervecerias" method="POST">
-    @csrf
-        <div class="row shadow rounded-3 border border-white py-3 px-2 my-3">
-            <div class="col-md-6 mb-3">
-                <label for="name" class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="name" placeholder="Nombre cerveceria" data-rule="minlen:3" data-msg="Please enter at least 3 characters">
-                <div class="validate"></div>
+        <form action="/cervecerias" method="POST" role="form" class="php-email-form">
+        @csrf
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Nombre Cerveceria" data-rule="minlen:3" data-msg="Please enter at least 3 characters">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <input type="number" class="form-control" name="capacity" id="capacity" placeholder="# de personas" data-rule="minlen:1" data-msg="Please enter at least 1 character">
+                    <div class="validate"></div>
+                </div>
+                <div class="form-group mt-3">
+                    <textarea class="form-control" name="description" rows="5" id="description" placeholder="Descripción"></textarea>
+                    <div class="validate"></div>
+                </div>
+                <div class="mb-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+                </div>
+                <div class="text-center"><button type="submit">Crear Cerveceria</button></div>
             </div>
-            <div class="col-md-6 mb-3">
-                <label for="capacity" class="form-label">Aforo</label>
-                <input type="number" class="form-control" name="capacity" id="capacity" placeholder="# de personas" data-rule="minlen:1" data-msg="Please enter at least ! character">
-                <div class="validate"></div>
-            </div>
-            <div class="col-md-12  mb-3" style="height:200px;">
-                <label for="description" class="form-label">Descripción</label>
-                <textarea class="form-control shadow-sm" type="text" name="description" rows="5" id="description" placeholder="Describe un poco el local"></textarea>
-            </div>
-            <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
+</section>
 
