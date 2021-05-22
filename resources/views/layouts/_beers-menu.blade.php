@@ -5,7 +5,7 @@
         <div class="section-title">
             <h2>Emborrachate con nuestras <span>Cervezas</span></h2>
         </div>
-
+        @if(count($brewery->beers) > 0)
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="menu-flters">
@@ -18,17 +18,19 @@
         </div>
 
         <div class="row menu-container">
+          @foreach($brewery->beers as $beer)
 
           <div class="col-lg-6 menu-item filter-starters">
             <div class="menu-content">
-              <a href="#">Lobster Bisque</a><span>$5.95</span>
+              <a href="#">{{$beer->name}}</a><span>${{$beer->price}}</span>
             </div>
             <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
+              {{$beer->description}}
             </div>
           </div>
+          @endforeach
 
-          <div class="col-lg-6 menu-item filter-specialty">
+          <!-- <div class="col-lg-6 menu-item filter-specialty">
             <div class="menu-content">
               <a href="#">Bread barrel</a><span>$6.95</span>
             </div>
@@ -98,9 +100,11 @@
             <div class="menu-ingredients">
               Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
             </div>
-          </div>
+          </div> -->
 
         </div>
-
+        @else
+        <h3 class="text-center">No hay cervezas todavía</h3>
+        @endif
       </div>
     </section><!-- End Menu Section -->

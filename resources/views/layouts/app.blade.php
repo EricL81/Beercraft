@@ -45,17 +45,7 @@
 
 
 <script src="{{mix('js/app.js')}}"></script>
-<script> 
-  const logout_btn = document.getElementById("logout")
-  const logout_form = document.getElementById("form-logout")
 
-  if(logout_btn != null){
-    logout_btn.addEventListener("click",()=>{
-      logout_form.submit()
-    })
-  }
-
-</script>
 @stack('js')
   </body>
 </html>

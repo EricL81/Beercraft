@@ -33,21 +33,29 @@
           <li class="dropdown"><a href="#"><span>Perfil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               @guest
-              {{-- si no estoy conectado --}}
               <li><a href="/login">Login</a></li>
               <li><a href="/register">Register</a></li>
               @endguest
 
               @auth
-              {{-- si estoy conectado --}}
-              <li><a href="#">Hola {{Auth::user()->name}}</a></li>
+
+              <li class="nav-item mx-3 mt-1">Hola, <span class="text-primary">{{Auth::user()->name}}</span></li>
+              <li>
+                <form action="/logout" method="POST">
+                @csrf
+                  <button class="btn btn-outline-danger" type="submit">Logout</button>        
+                </form>
+              </li>
+              <!-- <li><a href="#">Hola {{Auth::user()->name}}</a></li>
               <li>
                 <a id="logout" href="#">Logout</a>
                 <form id="form-logout" action="/logout" method="POST">
                 @csrf
                 </form>
-              </li>
+              </li> -->
               @endauth
+
+
 
             </ul>
           </li>

@@ -1,4 +1,4 @@
-<section id="form" class="book-a-table">
+<section id="form" class="book-a-table chefs">
     <div class="container">
         <div class="section-title">
             <h2>Agregar una nueva <span>Cerveceria</span></h2>
@@ -17,8 +17,12 @@
                     <div class="validate"></div>
                 </div>
                 <div class="form-group mt-3">
-                    <textarea class="form-control" name="description" rows="5" id="description" placeholder="Descripción"></textarea>
-                    <div class="validate"></div>
+                    <label for="">Selecciona las cervezas que se venden:</label>
+                    <select class="form-select" multiple aria-label="multiple select example" name='beers[]'>
+                        @foreach($beers as $beer)
+                        <option value="{{$beer->id}}">{{$beer->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="mb-3">
                     <div class="loading">Loading</div>

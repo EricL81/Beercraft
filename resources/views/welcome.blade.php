@@ -396,27 +396,36 @@
           </div>
         </div>
 
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <form action="{{route('contact')}}" method="POST" role="form" class="php-email-form">
+          @csrf
+          @if (session('success'))
+            <h1>{{session('success')}}</h1>
+          @endif
           <div class="row">
-            <div class="col-md-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            <div class="col-md-6 offset-3 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
             </div>
-            <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
             </div>
-          </div>
-          <div class="form-group mt-3">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-          </div>
-          <div class="form-group mt-3">
+            <div class="row">
+              <div class="col-md-6 offset-3 form-group mt-3">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Correo electrónico" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 offset-3 form-group mt-3">
+                <input type="text" class="form-control" name="numerocelular" id="subject" placeholder="Numero Celular" required>
+              </div>
+            </div>
+          
+          <!-- <div class="form-group mt-3">
             <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-          </div>
+          </div> -->
           <div class="my-3">
             <div class="loading">Loading</div>
             <div class="error-message"></div>
             <div class="sent-message">Your message has been sent. Thank you!</div>
           </div>
-          <div class="text-center"><button type="submit">Send Message</button></div>
+          <div class="text-center"><button type="submit">Enviar solicitud</button></div>
         </form>
 
       </div>
@@ -424,33 +433,9 @@
 
   </main><!-- End #main -->
 
-{{-- SECTION WITH CARDS HOMEPAGE--}}
 
-    <h1 class="py-5 mt-3 px-3 text-center text-warning">Beercraft</h1>
-    <h2 class="px-3 text-center">Cerveros, os damos la bienvenida !!</h2>
-    <div class="container py-3">
-        <div class="row">
-            @foreach ($breweries as $brewery)
-            <div class="col-12 col-md-6 col-lg-3  py-5">
-                <div class="card bg-transparent border-warning " style="width: 18rem; height: 46rem;">
-                <img src="css/cerveceria.jpg"  class="card-img-top" alt="...">
-                    <div class="card-body border-warning text-muted d-flex flex-column justify-content-between">
-                        <h3 class="card-title text-warning">{{$brewery->name}}</h3>
-                        <div class="text-white">
-                            <h5>Descripción</h5>
-                            {{$brewery->description}}
-                        </div>
-                        <div class="text-white">
-                            <h4>Aforo: {{$brewery->capacity}}</h4>
-                            <a href="#" class="btn btn-primary">Cerve-zas !!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
 
+    
 
 
 

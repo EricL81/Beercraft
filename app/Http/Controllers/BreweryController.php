@@ -1,14 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-
+ 
+use App\Models\Beer;
 use App\Models\Brewery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 class BreweryController extends Controller
 {
+    public function __construct()
+    {
+        View::share('beers', Beer::all());
+    }
+    
     public function all()
     {
         // recuperar las cervecerias del db 
@@ -25,7 +32,7 @@ class BreweryController extends Controller
         return view ('brewery',['brewery'=>$brewery]);
     }
 
-    public function beer(){
+/*     public function beer(){
         $beer = [
             [
                 "nombre"=>"Heineken",
@@ -58,7 +65,7 @@ class BreweryController extends Controller
         ];
 
         return view("cerveza", ["beers"=>$beer]);
-    }
+    } */
 
 
 
@@ -67,14 +74,17 @@ class BreweryController extends Controller
         $request = $request->validate([
             'name' => 'filled',
             'capacity' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'beers'=>'required'
         ]);
         
         $user = Auth::user();
+        
         if (!$user)
             return back()->with("message","No estás autenticado");
 
-        $user->breweries()->create($request);
+        $brewery = $user->breweries()->create($request);
+        $brewery->beers()->attach($request['beers']);
 
         return redirect()->back()->with("message","Cerveceria creada con exito");
     }
@@ -84,7 +94,8 @@ class BreweryController extends Controller
         $request = $request->validate([
             'name' => 'required',
             'capacity' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'beers'=>'required'
         ]);
 
         // si estoy autenticado y si soy el dueno
@@ -102,6 +113,8 @@ class BreweryController extends Controller
         $brewery->name = $request['name'];
         $brewery->capacity = $request['capacity'];
         $brewery->description = $request['description'];
+        $brewery->beers()->sync($request['beers']); 
+
 
         $brewery->save();
 
@@ -123,6 +136,12 @@ class BreweryController extends Controller
         $brewery->delete();
 
         return redirect()->route("cervecerias");
+    }
+
+    public function beer()
+    {
+        $beers = Beer::all();
+        return view('cerveza', compact($beers));
     }
 
 

@@ -9,7 +9,7 @@
 
         <div class="row">
             @foreach ($breweries as $brewery)
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 my-2">
                 <div class="member">
                     <div class="pic"><img src="/img/chefs/cerveceria-1.jpg" class="img-fluid" alt="..."></div>
                     <div class="member-info">
@@ -27,7 +27,7 @@
             @endforeach
         </div>
     </div>
-    </section><!-- End Chefs Section -->
+</section><!-- End Chefs Section -->
 
 
 

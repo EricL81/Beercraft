@@ -28,6 +28,21 @@
                         <textarea class="form-control" name="description" rows="5" id="description" placeholder="Descripción">{{$brewery->description}}</textarea>
                         <div class="validate"></div>
                     </div>
+                    <div class="form-group mt-3">
+                    <label for="">Selecciona las cervezas que se venden:</label>
+                    <select class="form-select" multiple aria-label="multiple select example" name='beers[]'>
+                        @foreach($beers as $beer)
+
+                        <option 
+                        @foreach($brewery->beers as $mybeer)
+                            @if($beer->id == $mybeer->id)
+                                selected
+                            @endif
+                        @endforeach                 
+                        value="{{$beer->id}}">{{$beer->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
                     <div class="mb-3">
                         <div class="loading">Loading</div>
                         <div class="error-message"></div>
