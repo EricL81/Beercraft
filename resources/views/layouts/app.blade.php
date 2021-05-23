@@ -27,7 +27,7 @@
 
     <!-- Bootstrap CSS -->
 
-    <link rel="stylesheet" href="{{mix('assets/css/app.css')}}">
+    <link rel="stylesheet" href="{{mix('css/app.css')}}">
 
 
     @stack('css')
@@ -44,7 +44,7 @@
 @include('layouts._foot')
 
 
-<script src="{{mix('assets/js/app.js')}}"></script>
+<script src="{{mix('js/app.js')}}"></script>
 
 @stack('js')
   </body>
