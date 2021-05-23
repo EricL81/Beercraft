@@ -26424,7 +26424,7 @@ iframe.wait-autoplay {
   }
 }
 /**
- * Swiper 6.5.0
+ * Swiper 6.6.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -26432,7 +26432,7 @@ iframe.wait-autoplay {
  *
  * Released under the MIT License
  *
- * Released on: March 5, 2021
+ * Released on: May 19, 2021
  */
 @font-face {
   font-family: "swiper-icons";
@@ -26603,7 +26603,7 @@ iframe.wait-autoplay {
   top: 50%;
   width: calc(var(--swiper-navigation-size) / 44 * 27);
   height: var(--swiper-navigation-size);
-  margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
+  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
   z-index: 10;
   cursor: pointer;
   display: flex;
@@ -26744,7 +26744,7 @@ button.swiper-pagination-bullet {
   box-shadow: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
+       appearance: none;
 }
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
