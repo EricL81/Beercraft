@@ -5,7 +5,7 @@ Commercial website of a beer producer called "Beercraft". It lists the different
 
 <br>
 
-## Tech used :
+## Tech practiced:
 
    - Authentication (Fortify)                      
    - Upload brewery
