@@ -4,8 +4,7 @@
 
  Commercial website of a beer producer called "Beercraft". It lists the different local breweries around the world and the different type of beers you can find there. A brewery owner can add his place on the website and can choose the beers he's selling from the whole list offered.
 
-   - Authentication (Fortify)
-   - Upload brewery
+   - Authentication (Fortify)                       - Upload brewery
    - Relations: 1-1/1-N/N-N
    - CRUD: create/read/update/delete
    - Use of Factory/Seeders
