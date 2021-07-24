@@ -11,10 +11,12 @@ Commercial website of a beer producer called "Beercraft". It lists the different
    - Contact Form
    - Use of a Template
    - MVC: Model-View-Controller
-   - Areas: Public/Private
+   - Areas: Public/Private  
 
 Using a Template from Bootstrapmade prevents me to deploy the project, due to the Content-Security-Policy.
  
+ <br>
+ <br>
  <br>
  <br>
  
@@ -27,6 +29,8 @@ Using a Template from Bootstrapmade prevents me to deploy the project, due to th
 <img align="left" alt="laravel" src="https://img.shields.io/badge/-Laravel-F62C1F?&style=for-the-badge&logo=laravel&logoColor=white" />
 <img align="left" alt="bootstrap" src="https://img.shields.io/badge/-bootstrap-533C78?&style=for-the-badge&logo=bootstrap&logoColor=white" />
 
+<br>
+<br>
 <br>
 
 ![](GoFullPage_Beercraft.png)
