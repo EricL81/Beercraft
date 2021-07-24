@@ -16,9 +16,6 @@ Commercial website of a beer producer called "Beercraft". It lists the different
 Using a Template from Bootstrapmade prevents me to deploy the project, due to the Content-Security-Policy.
  
  <br>
- <br>
- <br>
- <br>
  
  ## Stack used:
  
@@ -32,5 +29,9 @@ Using a Template from Bootstrapmade prevents me to deploy the project, due to th
 <br>
 <br>
 <br>
+<br>
+<br>
+
+## Project Landing Page:
 
 ![](GoFullPage_Beercraft.png)
