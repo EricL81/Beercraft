@@ -38,6 +38,27 @@ Using a Template from Bootstrapmade prevents me to deploy the project, due to th
 <br>
 <br>
 
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
 ## Project Landing Page:
 
 ![](GoFullPage_Beercraft.png)
