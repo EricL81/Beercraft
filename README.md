@@ -1,27 +1,20 @@
 
 # About this Project:
 
-												<p>
-													Commercial website of a beer producer called "Beercraft". It lists the different local breweries around the world and the different type of beers you can find there. A brewery owner can add his place on the website and can
-													choose the beers he's selling from the whole list offered.
-												</p>
-												<ul class="row">
-													<div class="col-lg-6">
-														<li>Authentication (Fortify)</li>
-														<li>Upload brewery</li>
-														<li>Relations: 1-1/1-N/N-N</li>
-														<li>CRUD: create/read/update/delete</li>
-													</div>
-													<div class="col-lg-6">
-														<li>Use of Factory/Seeders</li>
-														<li>Contact Form</li>
-														<li>Use of a Template</li>
-														<li>MVC: Model-View-Controller</li>
-														<li>Areas: Public/Private</li>
-													</div>
-												</ul>
 
-The final project of the Coding Bootcamp was thought as a clone of the well-known second-hand Sell & Buy portal WALLAPOP and includes following functionalities:
+ Commercial website of a beer producer called "Beercraft". It lists the different local breweries around the world and the different type of beers you can find there. A brewery owner can add his place on the website and can choose the beers he's selling from the whole list offered.
+
+   - Authentication (Fortify)
+   - Upload brewery
+   - Relations: 1-1/1-N/N-N
+   - CRUD: create/read/update/delete
+   - Use of Factory/Seeders
+   - Contact Form
+   - Use of a Template
+   - MVC: Model-View-Controller
+   - Areas: Public/Private
+
+Using a Template from Bootstrapmade prevents me to deploy the project, due to the Content-Security-Policy.
 
     - Authentication (Fortify)              - Multi-language Portal (EN, ES, IT, FR)
     - Upload announcement                   - Asynchronous Queue Workers
