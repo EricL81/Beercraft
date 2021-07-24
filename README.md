@@ -11,7 +11,9 @@ Commercial website of a beer producer called "Beercraft". It lists the different
    - Contact Form
    - Use of a Template
    - MVC: Model-View-Controller
-   - Areas: Public/Private  
+   - Areas: Public/Private 
+
+<br>
 
 Using a Template from Bootstrapmade prevents me to deploy the project, due to the Content-Security-Policy.
  
