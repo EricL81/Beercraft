@@ -19,7 +19,7 @@ Commercial website of a beer producer called "Beercraft". It lists the different
 
 <br>
 
-Using a Template from Bootstrapmade prevents me to deploy the project, due to the Content-Security-Policy.Some functionalities of the template used haven't been implemented yet (i.e Contact Form). The objective of this project was to practice on Laravel, Authentication and CRUD (create, read, update and delete a brewery) and connect the Front-end with the relational database (1-to-many / many-to-many).
+Using a Template from Bootstrapmade prevents me to deploy the project, due to the Content-Security-Policy. Some functionalities of the template used haven't been implemented yet (i.e Contact Form). The objective of this project was to practice on Laravel, Authentication and CRUD (create, read, update and delete a brewery) and connect the Front-end with the relational database (1-to-many / many-to-many).
  
  <br>
  
@@ -35,8 +35,6 @@ Using a Template from Bootstrapmade prevents me to deploy the project, due to th
 <br>
 <br>
 <br>
-<br>
-<br>
 
 ## User Flowchart:
 
@@ -48,8 +46,6 @@ Using a Template from Bootstrapmade prevents me to deploy the project, due to th
 
 ![](beercraft-DBschema.png)
 
-<br>
-<br>
 <br>
 <br>
 <br>
@@ -69,8 +65,6 @@ npm run serve
 npm run build
 ```
 
-<br>
-<br>
 <br>
 <br>
 <br>
